@@ -13,3 +13,5 @@
 !/.vim/plugged
 !/.vim/autoload
 !.vimrc
+
+!.zshrc
