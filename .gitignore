@@ -5,3 +5,4 @@
 !/.config
 /.config/*
 !/.config/tmuxinator
+!.tmux.conf
