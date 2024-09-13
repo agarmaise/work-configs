@@ -1,0 +1,9 @@
+[submodule ".vim/plugged/night-owl.vim"]
+	path = .vim/plugged/night-owl.vim
+	url = git@github.com:haishanh/night-owl.vim.git
+[submodule ".vim/plugged/spaceduck"]
+	path = .vim/plugged/spaceduck
+	url = git@github.com:pineapplegiant/spaceduck.git
+[submodule ".vim/plugged/vim-enfocado"]
+	path = .vim/plugged/vim-enfocado
+	url = git@github.com:wuelnerdotexe/vim-enfocado.git

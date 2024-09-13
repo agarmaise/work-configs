@@ -7,3 +7,9 @@
 /.config/*
 !/.config/tmuxinator
 !.tmux.conf
+
+!/.vim
+/.vim/.netrwhist
+!/.vim/plugged
+!/.vim/autoload
+!.vimrc
