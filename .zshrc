@@ -24,6 +24,7 @@ alias gitd="git diff master --merge-base --name-only"
 alias clorig="git clean -fdx --exclude node_modules -- '*.orig'"
 alias gitnm="git for-each-ref refs/heads --exclude='**/master' --format='%(authorname)%09%09%(refname)' | ggrep -iv avery | ggrep -oP '(?<=refs/heads/)(.*)'"
 alias gitbv="git branch -vv"
+alias gitr="git hash-object -t tree /dev/null"
 
 alias tspec="gsed -r -e 's/^([^.]*)(\.spec)?(\.\w+)$/\1\3\n\1.spec\3/' | sort | uniq | paste -sd\| - | gsed -r -e 's/^|$/'\''/g'"
 alias spec="gsed -r -e 's/^([^.]*)(\.spec)?(\.\w+)$/\1.spec\3/' | sort | uniq | paste -sd\| - | gsed -r -e 's/^|$/'\''/g'"
