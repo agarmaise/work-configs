@@ -10,7 +10,7 @@ alias xwb="xargs wb"
 alias vz="vim ~/.zshrc"
 alias sz="source ~/.zshrc"
 
-alias yarna="TARGETS=assets yarn start:standalone:rs:ts"
+alias yarna="TARGETS=assets yarn start:standalone"
 alias yarnia="yarn install && yarna"
 alias cdusd="cd ~/Projects/unity-services-dashboard"
 alias cdmw="cd ~/Projects/asset-cloud-frontend-services"
