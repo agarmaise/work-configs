@@ -8,6 +8,8 @@
 !/.config/tmuxinator
 !.tmux.conf
 
+!/.oh-my-zsh
+
 !/.vim
 /.vim/.netrwhist
 !/.vim/plugged
