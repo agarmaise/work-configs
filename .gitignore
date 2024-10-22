@@ -6,6 +6,7 @@
 !/.config
 /.config/*
 !/.config/tmuxinator
+!/.config/oh-my-zsh
 !.tmux.conf
 
 !/.oh-my-zsh
