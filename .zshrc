@@ -15,14 +15,14 @@ alias yarnia="yarn install && yarna"
 alias cdusd="cd ~/Projects/unity-services-dashboard"
 alias cdmw="cd ~/Projects/asset-cloud-frontend-services"
 
-alias ghopen="start \`git remote -v | ggrep fetch | gsed -r 's/.*git@(.*):(.*)\.git.*/http:\/\/\1\/\2/' | head -n1\`"
+alias ghopen="start \`git remote -v | grep fetch | gsed -r 's/.*git@(.*):(.*)\.git.*/http:\/\/\1\/\2/' | head -n1\`"
 alias chrome-dev="open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir='/tmp/chrome_dev_test' --disable-web-security"
 
 alias gitf="git status -s | gsed s/...//"
 alias gitfr='gitf | awk '\''{ print ($3 == "") ? $1 : $3; }'\'
 alias gitd="git diff master --merge-base --name-only"
 alias clorig="git clean -fdx --exclude node_modules -- '*.orig'"
-alias gitnm="git for-each-ref refs/heads --exclude='**/master' --format='%(authorname)%09%09%(refname)' | ggrep -iv avery | ggrep -oP '(?<=refs/heads/)(.*)'"
+alias gitnm="git for-each-ref refs/heads --exclude='**/master' --format='%(authorname)%09%09%(refname)' | grep -iv avery | grep -oP '(?<=refs/heads/)(.*)'"
 alias gitbv="git branch -vv"
 alias gitr="git hash-object -t tree /dev/null"
 
@@ -33,8 +33,8 @@ dms () {
     comp_file=$1
     test_file=$(echo $1 | gsed -r -e 's/^([^.]*)(\.spec)?(\.\w+)$/\1.spec\3/')
 
-    comp_file_imports=$(ggrep -oP "import .*" -- $comp_file | ggrep -oP "(?<=').*(?=')" | sort)
-    test_file_imports=$(ggrep -oP "(?<=jest.mock\(').*(?=')" -- $test_file | sort)
+    comp_file_imports=$(grep -oP "import .*" -- $comp_file | grep -oP "(?<=').*(?=')" | sort)
+    test_file_imports=$(grep -oP "(?<=jest.mock\(').*(?=')" -- $test_file | sort)
 
     comm -13 <(printf '%s\n' "${comp_file_imports[@]}") <(printf '%s\n' "${test_file_imports[@]}") | sort -u
 }
@@ -48,7 +48,7 @@ alias gitrb="git checkout master && git pull && git checkout - && git rebase mas
 
 gitcb () {
 	git remote update origin --prune > /dev/null 2>&1
-    gone_branches=("${(f)$(< <(git branch -vv | ggrep ': gone]' | awk '{ print $1 }'))}")
+    gone_branches=("${(f)$(< <(git branch -vv | grep ': gone]' | awk '{ print $1 }'))}")
 
 	if [ ${#gone_branches[@]} -gt 0 ]; then
 		echo 'Branches to be deleted:'
