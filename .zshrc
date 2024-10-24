@@ -15,10 +15,10 @@ alias yarnia="yarn install && yarna"
 alias cdusd="cd ~/Projects/unity-services-dashboard"
 alias cdmw="cd ~/Projects/asset-cloud-frontend-services"
 
-alias ghopen="start \`git remote -v | grep fetch | gsed -r 's/.*git@(.*):(.*)\.git.*/http:\/\/\1\/\2/' | head -n1\`"
+alias ghopen="start \`git remote -v | grep fetch | sed -r 's/.*git@(.*):(.*)\.git.*/http:\/\/\1\/\2/' | head -n1\`"
 alias chrome-dev="open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir='/tmp/chrome_dev_test' --disable-web-security"
 
-alias gitf="git status -s | gsed s/...//"
+alias gitf="git status -s | sed s/...//"
 alias gitfr='gitf | awk '\''{ print ($3 == "") ? $1 : $3; }'\'
 alias gitd="git diff master --merge-base --name-only"
 alias clorig="git clean -fdx --exclude node_modules -- '*.orig'"
@@ -26,12 +26,12 @@ alias gitnm="git for-each-ref refs/heads --exclude='**/master' --format='%(autho
 alias gitbv="git branch -vv"
 alias gitr="git hash-object -t tree /dev/null"
 
-alias tspec="gsed -r -e 's/^([^.]*)(\.spec)?(\.\w+)$/\1\3\n\1.spec\3/' | sort | uniq | paste -sd\| - | gsed -r -e 's/^|$/'\''/g'"
-alias spec="gsed -r -e 's/^([^.]*)(\.spec)?(\.\w+)$/\1.spec\3/' | sort | uniq | paste -sd\| - | gsed -r -e 's/^|$/'\''/g'"
+alias tspec="sed -r -e 's/^([^.]*)(\.spec)?(\.\w+)$/\1\3\n\1.spec\3/' | sort | uniq | paste -sd\| - | sed -r -e 's/^|$/'\''/g'"
+alias spec="sed -r -e 's/^([^.]*)(\.spec)?(\.\w+)$/\1.spec\3/' | sort | uniq | paste -sd\| - | sed -r -e 's/^|$/'\''/g'"
 
 dms () {
     comp_file=$1
-    test_file=$(echo $1 | gsed -r -e 's/^([^.]*)(\.spec)?(\.\w+)$/\1.spec\3/')
+    test_file=$(echo $1 | sed -r -e 's/^([^.]*)(\.spec)?(\.\w+)$/\1.spec\3/')
 
     comp_file_imports=$(grep -oP "import .*" -- $comp_file | grep -oP "(?<=').*(?=')" | sort)
     test_file_imports=$(grep -oP "(?<=jest.mock\(').*(?=')" -- $test_file | sort)
