@@ -3,13 +3,15 @@
 !.gitconfig
 !.gitignore
 
+!.brew-install
+
 !/.config
 /.config/*
 !/.config/tmuxinator
 !/.config/oh-my-zsh
 !.tmux.conf
 
-!/.oh-my-zsh
+!.oh-my-zsh
 
 !/.vim
 /.vim/.netrwhist
