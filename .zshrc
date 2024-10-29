@@ -48,7 +48,7 @@ alias gitrb="git checkout master && git pull && git checkout - && git rebase mas
 
 gitcb () {
 	git remote update origin --prune > /dev/null 2>&1
-    gone_branches=("${(f)$(< <(git branch -vv | grep ': gone]' | awk '{ print $1 }'))}")
+    gone_branches=(${(f)"$(< <(git branch -vv | grep ': gone]' | awk '{ print $1 }'))"})
 
 	if [ ${#gone_branches[@]} -gt 0 ]; then
 		echo 'Branches to be deleted:'
