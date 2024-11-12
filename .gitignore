@@ -1,5 +1,6 @@
 .DS_Store
 /*
+
 !.gitconfig
 !.gitignore
 
@@ -7,8 +8,11 @@
 
 !/.config
 /.config/*
-!/.config/tmuxinator
+!/.config/iterm2
+/.config/iterm2/*
+!/.config/iterm2/settings
 !/.config/oh-my-zsh
+!/.config/tmuxinator
 !.tmux.conf
 
 !.oh-my-zsh
