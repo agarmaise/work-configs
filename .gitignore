@@ -1,8 +1,8 @@
-.DS_Store
 /*
 
 !.gitconfig
 !.gitignore
+!.gitignore_global
 
 !.brew-install
 

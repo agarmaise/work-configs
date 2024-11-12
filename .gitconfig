@@ -8,6 +8,7 @@
 	email = avery.garmaise@unity3d.com
 [core]
 	pager = less -F -X
+	excludesfile = ~/.gitignore_global
 [diff]
     tool = vimdiff
     guitool = webstorm
