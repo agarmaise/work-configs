@@ -1,0 +1,4 @@
+[core]
+	hooksPath = .githooks
+[merge]
+	ff = only

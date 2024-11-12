@@ -1,6 +1,8 @@
 /*
 
 !.gitconfig
+!.gitconfig_local
+!.githooks/
 !.gitignore
 !.gitignore_global
 
