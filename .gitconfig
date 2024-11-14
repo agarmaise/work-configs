@@ -10,18 +10,18 @@
 	pager = less -F -X
 	excludesfile = ~/.gitignore_global
 [diff]
-    tool = vimdiff
-    guitool = webstorm
+	tool = vimdiff
+	guitool = webstorm
 [difftool "webstorm"]
-    cmd = '/Applications/WebStorm.app/Contents/MacOS/webstorm' diff "$LOCAL" "$REMOTE"
+	cmd = '/Applications/WebStorm.app/Contents/MacOS/webstorm' diff "$LOCAL" "$REMOTE"
 [merge]
 	tool = vimdiff
-    guitool = webstorm
+	guitool = webstorm
 [mergetool]
-    keepBackup = false
+	keepBackup = false
 [mergetool "webstorm"]
-    cmd = '/Applications/WebStorm.app/Contents/MacOS/webstorm' merge "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
-    trustExitCode = true
+	cmd = '/Applications/WebStorm.app/Contents/MacOS/webstorm' merge "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
+	trustExitCode = true
 [diff]
 	tool = vimdiff
 [init]
