@@ -17,6 +17,9 @@ set termguicolors
 inoremap kj <Esc>
 autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
 autocmd Filetype typescript setlocal ts=2 sw=2 expandtab
+autocmd BufNewFile,BufRead *.gitconfig* setlocal filetype=gitconfig
+autocmd Filetype gitconfig setlocal noexpandtab
+autocmd BufNewFile,BufRead *.gitignore* setlocal filetype=gitignore
 
 call plug#begin()
 
