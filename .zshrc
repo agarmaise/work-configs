@@ -25,6 +25,7 @@ alias clorig="git clean -fdx --exclude node_modules -- '*.orig'"
 alias gitnm="git for-each-ref refs/heads --exclude='**/$(git_main_branch)' --format='%(authorname)%09%09%(refname)' | grep -iv avery | grep -oP '(?<=refs/heads/)(.*)'"
 alias gitbv="git branch -vv"
 alias gitr="git hash-object -t tree /dev/null"
+alias gitum="git checkout $(git_develop_branch) && git push && git checkout $(git_main_branch) && git merge $(git_develop_branch) && git push && git checkout $(git_develop_branch)"
 
 alias tspec="sed -r -e 's/^([^.]*)(\.spec)?(\.\w+)$/\1\3\n\1.spec\3/' | sort | uniq | paste -sd\| - | sed -r -e 's/^|$/'\''/g'"
 alias spec="sed -r -e 's/^([^.]*)(\.spec)?(\.\w+)$/\1.spec\3/' | sort | uniq | paste -sd\| - | sed -r -e 's/^|$/'\''/g'"
