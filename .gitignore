@@ -18,7 +18,6 @@
 !.tmux.conf
 
 !.oh-my-zsh
-!.omzrc
 
 !/.vim
 /.vim/.netrwhist
