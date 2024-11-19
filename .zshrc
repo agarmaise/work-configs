@@ -16,6 +16,7 @@ source ~/.secrets
 export EDITOR=vim
 export MSYS=winsymlinks:nativestrict
 export DISABLE_AUTO_TITLE=true
+export LESS='-RFX'
 
 alias -g wb="/Applications/WebStorm.app/Contents/MacOS/webstorm"
 alias xwb="xargs wb"
