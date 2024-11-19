@@ -1,5 +1,6 @@
 [pager]
 	branch = false
+	stash = false
 [push]
 	default = simple
 	autoSetupRemote = true
