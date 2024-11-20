@@ -6,8 +6,6 @@
 !.gitignore
 !.gitignore_global
 
-!.brew-install
-
 !/.config
 /.config/*
 !/.config/iterm2
@@ -25,3 +23,5 @@
 !.vimrc
 
 !.zshrc
+
+!scripts/
