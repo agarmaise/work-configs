@@ -20,9 +20,8 @@
 !.oh-my-zsh
 
 !/.vim
-/.vim/.netrwhist
+/.vim/*
 !/.vim/plugged
-!/.vim/autoload
 !.vimrc
 
 !.zshrc
