@@ -1,14 +1,12 @@
-[push]
-	default = simple
-	autoSetupRemote = true
-[user]
-	name = Avery Garmaise
-	email = avery.garmaise@unity3d.com
+[init]
+	defaultBranch = main
 [core]
 	excludesfile = ~/.gitignore_global
 [diff]
 	tool = vimdiff
 	guitool = webstorm
+[difftool]
+	prompt = false
 [difftool "webstorm"]
 	cmd = '/Applications/WebStorm.app/Contents/MacOS/webstorm' diff "$LOCAL" "$REMOTE"
 [merge]
@@ -19,9 +17,9 @@
 [mergetool "webstorm"]
 	cmd = '/Applications/WebStorm.app/Contents/MacOS/webstorm' merge "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
 	trustExitCode = true
-[diff]
-	tool = vimdiff
-[init]
-	defaultBranch = main
-[difftool]
-	prompt = false
+[push]
+	default = simple
+	autoSetupRemote = true
+[user]
+	name = Avery Garmaise
+	email = avery.garmaise@unity3d.com
