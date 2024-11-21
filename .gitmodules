@@ -10,3 +10,6 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = git@github.com:ohmyzsh/ohmyzsh.git
+[submodule ".vim/plugged/vim-easy-align"]
+	path = .vim/plugged/vim-easy-align
+	url = git@github.com:junegunn/vim-easy-align.git

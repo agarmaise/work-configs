@@ -1,14 +1,14 @@
-syntax on	" syntax highlighting
-set hlsearch	" highlight all search results
-" set ignorecase	" do case insensitive search
-set incsearch	" show incremental search results as you type
-set number	" display line number
+syntax on                     " syntax highlighting
+set hlsearch                  " highlight all search results
+" set ignorecase                " do case insensitive search
+set incsearch                 " show incremental search results as you type
+set number                    " display line number
 set relativenumber
 set noswapfile
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set cursorline	" current line highlight
+set cursorline                " current line highlight
 set cursorcolumn
 set noro
 set updatetime=100
@@ -32,6 +32,7 @@ call plug#begin()
 Plug 'wuelnerdotexe/vim-enfocado'
 Plug 'haishanh/night-owl.vim'
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
+Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 
