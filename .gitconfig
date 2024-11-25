@@ -23,3 +23,5 @@
 [user]
 	name = Avery Garmaise
 	email = avery.garmaise@unity3d.com
+[checkout]
+	guess = false
