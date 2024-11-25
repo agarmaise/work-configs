@@ -54,9 +54,9 @@ dms () {
     comm -13 <(printf '%s\n' "${comp_file_imports[@]}") <(printf '%s\n' "${test_file_imports[@]}") | sort -u
 }
 
-alias jtest="xargs yarn test --colors --"
-alias jtestcov="xargs -I{} yarn test --coverage --collectCoverageFrom={} -- {}"
-alias jtesta="yarn test --colors -- app/services/assets"
+alias jtest="xargs yarn test --colors --noStackTrace --"
+alias jtestcov="xargs -I{} yarn test --noStackTrace --coverage --collectCoverageFrom={} -- {}"
+alias jtesta="yarn test --colors --noStackTrace -- app/services/assets"
 
 alias gitmm="git checkout $(git_main_branch) && git pull && git checkout - && git merge $(git_main_branch) --no-edit"
 alias gitrb="git checkout $(git_main_branch) && git pull && git checkout - && git rebase $(git_main_branch)"
