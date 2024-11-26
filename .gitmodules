@@ -13,3 +13,6 @@
 [submodule ".vim/plugged/vim-easy-align"]
 	path = .vim/plugged/vim-easy-align
 	url = git@github.com:junegunn/vim-easy-align.git
+[submodule ".asdf"]
+	path = .asdf
+	url = git@github.com:asdf-vm/asdf.git
