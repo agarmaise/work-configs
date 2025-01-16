@@ -46,16 +46,6 @@ alias gitum="git checkout $(git_develop_branch) && git push && git checkout $(gi
 alias tspec="sed -r -e 's/^([^.]*)(\.spec)?(\.\w+)$/\1\3\n\1.spec\3/' | sort | uniq | paste -sd\| - | sed -r -e 's/^|$/'\''/g'"
 alias spec="sed -r -e 's/^([^.]*)(\.spec)?(\.\w+)$/\1.spec\3/' | sort | uniq | paste -sd\| - | sed -r -e 's/^|$/'\''/g'"
 
-dms () {
-    comp_file=$1
-    test_file=$(echo $1 | sed -r -e 's/^([^.]*)(\.spec)?(\.\w+)$/\1.spec\3/')
-
-    comp_file_imports=$(grep -oP "import .*" -- $comp_file | grep -oP "(?<=').*(?=')" | sort)
-    test_file_imports=$(grep -oP "(?<=jest.mock\(').*(?=')" -- $test_file | sort)
-
-    comm -13 <(printf '%s\n' "${comp_file_imports[@]}") <(printf '%s\n' "${test_file_imports[@]}") | sort -u
-}
-
 alias jtest="xargs yarn test --colors --noStackTrace --"
 alias jtestcov="xargs -I{} yarn test --noStackTrace --coverage --collectCoverageFrom={} -- {}"
 alias jtesta="yarn test --colors --noStackTrace -- app/services/assets"
