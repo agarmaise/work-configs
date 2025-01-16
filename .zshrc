@@ -1,9 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
-
 ZSH_THEME="ys-avery" # set by `omz`
-
 plugins=(git aliases alias-finder)
-
 source $ZSH/oh-my-zsh.sh
 
 zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
