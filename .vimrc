@@ -11,7 +11,9 @@ set expandtab
 set cursorline                " current line highlight
 set cursorcolumn
 set noro
-set updatetime=100
+set updatetime=1000
+set redrawtime=1000
+set re=0
 set background=dark
 set termguicolors
 inoremap kj <Esc>
