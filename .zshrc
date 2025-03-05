@@ -17,6 +17,7 @@ export LESS='-RFX'
 
 alias -g wb="/Applications/WebStorm.app/Contents/MacOS/webstorm"
 alias xwb="xargs wb"
+alias xvim="xargs -o vim"
 
 alias vz="vim ~/.zshrc"
 alias sz="source ~/.zshrc"
