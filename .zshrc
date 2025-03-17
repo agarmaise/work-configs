@@ -82,6 +82,8 @@ PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 PATH="$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
 PATH="$HOMEBREW_PREFIX/opt/grep/libexec/gnubin:$PATH"
 PATH="$HOMEBREW_PREFIX/opt/findutils/libexec/gnubin:$PATH"
+PATH="$HOMEBREW_PREFIX/opt/util-linux/bin:$PATH"
+PATH="$HOMEBREW_PREFIX/opt/util-linux/sbin:$PATH"
 export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:${PATH}"
 
 MANPATH="$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnuman:$MANPATH"
