@@ -52,9 +52,9 @@ gitum () {
 alias tspec="sed -r -e 's/^([^.]*)(\.spec)?(\.\w+)$/\1\3\n\1.spec\3/' | sort | uniq | paste -sd\| - | sed -r -e 's/^|$/'\''/g'"
 alias spec="sed -r -e 's/^([^.]*)(\.spec)?(\.\w+)$/\1.spec\3/' | sort | uniq | paste -sd\| - | sed -r -e 's/^|$/'\''/g'"
 
-alias jtest="xargs yarn test --colors --noStackTrace --"
+alias jtest="xargs yarn test --noStackTrace --"
 alias jtestcov="xargs -I{} yarn test --noStackTrace --coverage --collectCoverageFrom={} -- {}"
-alias jtesta="yarn test --colors --noStackTrace -- app/services/assets"
+alias jtesta="yarn test --noStackTrace -- app/services/assets"
 
 alias gitmm="git checkout $(git_main_branch) && git pull && git checkout - && git merge $(git_main_branch) --no-edit"
 alias gitrb="git checkout $(git_main_branch) && git pull && git checkout - && git rebase $(git_main_branch)"
