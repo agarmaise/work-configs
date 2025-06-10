@@ -24,6 +24,8 @@ alias xvim="xargs -o vim"
 alias vz="vim ~/.zshrc"
 alias sz="source ~/.zshrc"
 
+awkp() { awk -v i=$1 '{ print (i == "NF" ? $NF : $i) }' }
+
 alias yarna="TARGETS=assets yarn start:standalone"
 alias yarnia="yarn install && yarna"
 alias cdusd="cd ~/Projects/unity-services-dashboard"
