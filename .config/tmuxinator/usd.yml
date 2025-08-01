@@ -45,5 +45,5 @@ on_project_exit: tmux -CC attach -t usd
 attach: false
 
 windows:
-  - dashboard: yarnia
+  - dashboard: git pull; yarnia
   - dev1: git status
