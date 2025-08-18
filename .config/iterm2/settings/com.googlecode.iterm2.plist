@@ -2279,6 +2279,8 @@
 			<string>/Users/avery.garmaise</string>
 		</dict>
 	</array>
+	<key>OnlyWhenMoreTabs</key>
+	<false/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>2</integer>
 	<key>PasteSpecialRegex</key>
