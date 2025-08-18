@@ -301,10 +301,10 @@ function ggf() {
 }
 compdef _git ggf=git-checkout
 
-alias gpf!='git push --force'
+alias -g gpf!='git push --force'
 is-at-least 2.30 "$git_version" \
-  && alias gpf='git push --force-with-lease --force-if-includes' \
-  || alias gpf='git push --force-with-lease'
+  && alias -g gpf='git push --force-with-lease --force-if-includes' \
+  || alias -g gpf='git push --force-with-lease'
 
 function ggfl() {
   [[ "$#" != 1 ]] && local b="$(git_current_branch)"
