@@ -37,6 +37,7 @@ Plug 'wuelnerdotexe/vim-enfocado'
 Plug 'haishanh/night-owl.vim'
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'junegunn/vim-easy-align'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 

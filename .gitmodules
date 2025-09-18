@@ -13,3 +13,6 @@
 [submodule ".vim/plugged/vim-easy-align"]
 	path = .vim/plugged/vim-easy-align
 	url = git@github.com:junegunn/vim-easy-align.git
+[submodule ".vim/plugged/vim-fugitive"]
+	path = .vim/plugged/vim-fugitive
+	url = git@github.com:tpope/vim-fugitive
