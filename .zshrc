@@ -58,6 +58,10 @@ alias jtest="xargs yarn test --noStackTrace --"
 alias jtestcov="xargs -I{} yarn test --noStackTrace --coverage --collectCoverageFrom={} -- {}"
 alias jtesta="yarn test --noStackTrace -- app/services/assets"
 
+jtestcovf () {
+    yarn test --noStackTrace --coverage --collectCoverageFrom="$1"'/**/*' -- "$1"
+}
+
 alias gitmm="git checkout $(git_main_branch) && git pull && git checkout - && git merge $(git_main_branch) --no-edit"
 alias gitrb="git checkout $(git_main_branch) && git pull && git checkout - && git rebase $(git_main_branch)"
 alias gitrba="git checkout $(git_main_branch) && git pull && gitmi | xargs -i sh -c 'git checkout {} && git rebase $(git_main_branch)'"
