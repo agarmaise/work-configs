@@ -18,6 +18,8 @@
 
 !.oh-my-zsh
 
+!.todo.cfg
+
 !/.vim
 /.vim/*
 !/.vim/plugged
