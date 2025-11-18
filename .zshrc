@@ -17,6 +17,7 @@ export MSYS=winsymlinks:nativestrict
 export DISABLE_AUTO_TITLE=true
 export LESS='-RFX'
 
+alias todo="todo.sh"
 alias -g wb="/Applications/WebStorm.app/Contents/MacOS/webstorm"
 alias xwb="xargs wb"
 alias kwb="ps -e | grep '/Applications/WebStorm.app/Contents/MacOS/webstorm' | head -1 | awkp 1 | xargs kill -9"
