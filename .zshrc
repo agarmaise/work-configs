@@ -1,3 +1,13 @@
+HISTSIZE=1000000000
+SAVEHIST=1000000000
+setopt APPEND_HISTORY
+setopt BANG_HIST
+setopt EXTENDED_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_LEX_WORDS
+setopt HIST_REDUCE_BLANKS
+setopt SHARE_HISTORY
+
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="ys-avery" # set by `omz`
 plugins=(git aliases alias-finder)
