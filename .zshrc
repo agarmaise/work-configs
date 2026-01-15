@@ -128,6 +128,7 @@ load-nvmrc() {
     elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
       nvm use
     fi
+  fi
 }
 
 add-zsh-hook chpwd load-nvmrc
