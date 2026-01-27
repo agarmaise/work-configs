@@ -53,6 +53,7 @@ alias ghopen="start \`git remote -v | grep fetch | sed -r 's/.*git@(.*):(.*)\.gi
 alias chrome-dev="open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir='/tmp/chrome_dev_test' --disable-web-security"
 
 alias -g gitcg="git checkout --guess"
+alias -g gitgr="git grep --recurse-submodules"
 alias gitf="git status -s | sed s/...//"
 alias gitfr='gitf | awk '\''{ print ($3 == "") ? $1 : $3; }'\'
 alias gitd="git diff $(git_main_branch) --merge-base --name-only"
