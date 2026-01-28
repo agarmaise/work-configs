@@ -101,6 +101,8 @@ gitcb () {
 	fi
 }
 
+tlog () { tee ~/logs/$1-$(date +%s%3N).log }
+
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
