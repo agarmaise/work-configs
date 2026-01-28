@@ -10,7 +10,6 @@ set shiftwidth=4
 set expandtab
 set cursorline                " current line highlight
 set cursorcolumn
-set noro
 set updatetime=1000
 set redrawtime=1000
 set re=0
