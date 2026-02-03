@@ -29,9 +29,12 @@ export LESS='-RFX'
 
 alias todo="todo.sh"
 
+alias -g rdr="/Applications/Rider.app/Contents/MacOS/rider"
+alias xrd="xargs rdr"
 alias -g wb="/Applications/WebStorm.app/Contents/MacOS/webstorm"
 alias xwb="xargs wb"
 alias kwb="ps -e | grep '/Applications/WebStorm.app/Contents/MacOS/webstorm' | head -1 | awkp 1 | xargs kill -9"
+
 alias xvim="xargs -o vim"
 
 alias vz="vim ~/.zshrc"
