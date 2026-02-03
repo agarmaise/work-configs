@@ -28,7 +28,6 @@ export DISABLE_AUTO_TITLE=true
 export LESS='-RFX'
 
 alias todo="todo.sh"
-alias tla="todo ls -+1:1"
 
 alias -g wb="/Applications/WebStorm.app/Contents/MacOS/webstorm"
 alias xwb="xargs wb"
