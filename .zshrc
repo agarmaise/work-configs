@@ -32,6 +32,7 @@ alias todo="todo.sh"
 alias -g rdr="/Applications/Rider.app/Contents/MacOS/rider"
 alias xrd="xargs rdr"
 alias -g wb="/Applications/WebStorm.app/Contents/MacOS/webstorm"
+alias wbh="wb . &> /dev/null &"
 alias xwb="xargs wb"
 alias kwb="ps -e | grep '/Applications/WebStorm.app/Contents/MacOS/webstorm' | head -1 | awkp 1 | xargs kill -9"
 
