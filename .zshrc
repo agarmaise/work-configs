@@ -64,7 +64,6 @@ ins() {
 alias yarna="TARGETS=assets yarn start:standalone"
 alias yarnia="yarn install && yarna"
 alias cdusd="cd ~/Projects/unity-services-dashboard"
-alias cdmw="cd ~/Projects/asset-cloud-frontend-services"
 
 alias jqts-raw="jq '.[] | select(.fileName == \"udash.assets\") | .messages | del(.[] | .locales | .de_DE, .fr_FR, .pt_BR, .ru_RU, .es_XN) | map(select(.locales | .ja_JP and .ko_KR and .zh_CN | not)) | del(.[] | .locales)'"
 alias jqts="curl https://cdn.cloud.unity.com/translation-status/translation-status.json | jqts-raw"
