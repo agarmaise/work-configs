@@ -38,6 +38,10 @@ alias kwb="ps -e | grep '/Applications/WebStorm.app/Contents/MacOS/webstorm' | h
 
 alias xvim="xargs -o vim"
 
+alias cursor-ide="cursor"
+alias cursor="agent"
+alias cursor-agent="agent"
+
 alias vz="vim ~/.zshrc"
 alias sz="source ~/.zshrc"
 
