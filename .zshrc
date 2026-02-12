@@ -47,6 +47,20 @@ alias sz="source ~/.zshrc"
 
 awkp() { awk -v i=$1 '{ print (i == "NF" ? $NF : $i) }' }
 
+ins() {
+    last_cmd=(${=$(fc -ln -1)})
+    n=$1
+    words=${@:2}
+    new_cmd=("${last_cmd[@]:0:$n}" "$words" "${last_cmd[@]:$n}")
+
+    read -s -k 1 "input?$new_cmd"
+    if [[ $input == $'\n' ]]; then
+        echo
+        print -s $new_cmd
+        eval $new_cmd
+    fi
+}
+
 alias yarna="TARGETS=assets yarn start:standalone"
 alias yarnia="yarn install && yarna"
 alias cdusd="cd ~/Projects/unity-services-dashboard"
