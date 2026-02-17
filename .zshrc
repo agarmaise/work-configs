@@ -14,6 +14,7 @@ plugins=(git aliases alias-finder)
 source $ZSH/oh-my-zsh.sh
 
 unalias grep
+unalias rd
 
 zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
 zstyle ':omz:plugins:alias-finder' longer yes # disabled by default
