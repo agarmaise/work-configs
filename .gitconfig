@@ -25,3 +25,5 @@
 	email = avery.garmaise@unity3d.com
 [checkout]
 	guess = false
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
