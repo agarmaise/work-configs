@@ -59,6 +59,8 @@ ins() {
         echo
         print -s $new_cmd
         eval $new_cmd
+    else
+        print -s $last_cmd
     fi
 }
 
