@@ -74,7 +74,7 @@ alias jqts="curl https://cdn.cloud.unity.com/translation-status/translation-stat
 alias jqtsl="jqts-raw translation-status.json"
 
 alias ghopen="start \`git remote -v | grep fetch | sed -r 's/.*git@(.*):(.*)\.git.*/http:\/\/\1\/\2/' | head -n1\`"
-alias chrome-dev="open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir='/tmp/chrome_dev_test' --disable-web-security"
+alias chrome-dev="open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir=$HOME/tmp/chrome_dev_test --disable-web-security"
 
 alias -g gitcg="git checkout --guess"
 alias -g gitgr="git grep --recurse-submodules"
