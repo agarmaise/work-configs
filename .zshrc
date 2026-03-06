@@ -55,12 +55,27 @@ ins() {
     new_cmd=("${last_cmd[@]:0:$n}" "$words" "${last_cmd[@]:$n}")
 
     read -s -k 1 "input?$new_cmd"
-    if [[ $input == $'\n' ]]; then
-        echo
-        print -s $new_cmd
-        eval $new_cmd
+
+    if [[ $input == $'\e' ]]; then
+        should_execute=1
+        next_cmd=$last_cmd
     else
-        print -s $last_cmd
+        should_execute=0
+        next_cmd=$new_cmd
+        if [[ $input != $'\n' ]]; then
+            echo -n $input
+            next_cmd+=$input
+            read input
+            next_cmd+=$input
+        else
+            echo
+        fi
+    fi
+
+    print -s $next_cmd
+
+    if [[ $should_execute -eq 0 ]]; then
+        eval $next_cmd
     fi
 }
 
