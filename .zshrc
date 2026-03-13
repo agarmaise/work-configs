@@ -30,6 +30,16 @@ export LESS='-RFX'
 
 alias todo="todo.sh"
 
+_todo()
+{
+    source .todo.cfg
+    local projects=$(grep -oP '[+@]\S+' $TODO_FILE | sort -u | tr '\n' ' ')
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=( $(compgen -W $projects -- $cur) )
+}
+
+complete -F _todo todo
+
 alias -g rdr="/Applications/Rider.app/Contents/MacOS/rider"
 alias xrd="xargs rdr"
 alias -g wb="/Applications/WebStorm.app/Contents/MacOS/webstorm"
