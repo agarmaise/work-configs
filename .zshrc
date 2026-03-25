@@ -41,6 +41,7 @@ _todo()
 complete -F _todo todo
 
 alias -g rdr="/Applications/Rider.app/Contents/MacOS/rider"
+alias rdh="rdr *.sln &> /dev/null &"
 alias xrd="xargs rdr"
 alias -g wb="/Applications/WebStorm.app/Contents/MacOS/webstorm"
 alias wbh="wb . &> /dev/null &"
