@@ -76,7 +76,7 @@ ins() {
         next_cmd=$last_cmd
     else
         should_execute=0
-        next_cmd=$new_cmd
+        next_cmd=${new_cmd[*]}
         if [[ $input != $'\n' ]]; then
             echo -n $input
             next_cmd+=$input
