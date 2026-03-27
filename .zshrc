@@ -61,7 +61,7 @@ alias sz="source ~/.zshrc"
 
 awkp() { awk -v i=$1 '{ print (i == "NF" ? $NF : $i) }' }
 
-xsi() { xargs sed -i $@ }
+xsi() { xargs sed -i "$@" }
 
 ins() {
     last_cmd=(${=$(fc -ln -1)})
