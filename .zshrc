@@ -106,6 +106,8 @@ alias jqtsl="jqts-raw translation-status.json"
 alias ghopen="start \`git remote -v | grep fetch | sed -r 's/.*git@(.*):(.*)\.git.*/http:\/\/\1\/\2/' | head -n1\`"
 alias chrome-dev="open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir=$HOME/tmp/chrome_dev_test --disable-web-security"
 
+ggl() { open -u "https://www.google.com/search?q=$(jq -r @uri <<< \"$@\")" }
+
 alias -g gitcg="git checkout --guess"
 alias -g gitgr="git grep --recurse-submodules"
 alias gitf="git status -s | sed s/...//"
