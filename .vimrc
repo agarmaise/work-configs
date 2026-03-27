@@ -30,13 +30,26 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+set nocompatible
+filetype plugin indent on
+
+runtime macros/matchit.vim
+
 call plug#begin()
 
-Plug 'wuelnerdotexe/vim-enfocado'
 Plug 'haishanh/night-owl.vim'
-Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'junegunn/vim-easy-align'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-lastpat'
+Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
+Plug 'subnut/visualstar.vim'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'wuelnerdotexe/vim-enfocado'
 
 call plug#end()
 
