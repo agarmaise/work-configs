@@ -16,15 +16,9 @@
 !/.config/tmuxinator
 !.tmux.conf
 
-!.oh-my-zsh
-
 !.todo.cfg
 
-!/.vim
-/.vim/*
-!/.vim/plugged
 !.vimrc
-
 !.zshrc
 
 !scripts/
