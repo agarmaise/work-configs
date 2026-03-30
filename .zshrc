@@ -169,7 +169,10 @@ gitcb () {
 	fi
 }
 
-tlog () { tee ~/logs/$1-$(date +%s%3N).log }
+tlog () {
+    tlog_output=~/logs/$1-$(date +%s%3N).log
+    tee $tlog_output
+}
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
