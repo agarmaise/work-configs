@@ -2,6 +2,7 @@ set nocompatible
 syntax on                     " syntax highlighting
 set hlsearch                  " highlight all search results
 set ignorecase                " do case insensitive search
+set smartcase
 set incsearch                 " show incremental search results as you type
 set number                    " display line number
 set relativenumber
