@@ -106,7 +106,19 @@ alias jqtsl="jqts-raw translation-status.json"
 alias ghopen="start \`git remote -v | grep fetch | sed -r 's/.*git@(.*):(.*)\.git.*/http:\/\/\1\/\2/' | head -n1\`"
 alias chrome-dev="open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir=$HOME/tmp/chrome_dev_test --disable-web-security"
 
-ggl() { open -u "https://www.google.com/search?q=$(jq -r @uri <<< \"$@\")" }
+focus_iterm2() {
+    osascript <<EOF
+tell application "System Events" to tell process "iTerm2"
+    set frontmost to true
+    perform action "AXRaise" of the last window
+end tell
+EOF
+}
+
+ggl() {
+    (open -gju "https://www.google.com/search?q=$(jq -r @uri <<< \"$@\")" &
+    focus_iterm2 &> /dev/null)
+}
 
 alias -g gitcg="git checkout --guess"
 alias -g gitgr="git grep --recurse-submodules"
