@@ -1,3 +1,4 @@
+set nocompatible
 syntax on                     " syntax highlighting
 set hlsearch                  " highlight all search results
 set ignorecase                " do case insensitive search
@@ -16,6 +17,7 @@ set re=0
 set background=dark
 set termguicolors
 set shellcmdflag=-ic
+set history=10000
 inoremap kj <Esc>
 autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
 autocmd Filetype typescript setlocal ts=2 sw=2 expandtab
@@ -31,7 +33,6 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-set nocompatible
 filetype plugin indent on
 
 runtime macros/matchit.vim
