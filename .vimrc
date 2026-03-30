@@ -19,7 +19,10 @@ set background=dark
 set termguicolors
 set shellcmdflag=-ic
 set history=10000
+
 inoremap kj <Esc>
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+
 autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
 autocmd Filetype typescript setlocal ts=2 sw=2 expandtab
 autocmd Filetype json setlocal ts=2 sw=2 expandtab
