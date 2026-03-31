@@ -45,7 +45,6 @@ runtime macros/matchit.vim
 
 call plug#begin()
 
-Plug 'haishanh/night-owl.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
