@@ -19,7 +19,6 @@ set shellcmdflag=-ic
 set shiftwidth=4
 set smartcase
 set tabstop=4
-set termguicolors
 set updatetime=1000
 
 inoremap kj <Esc>
@@ -60,5 +59,12 @@ Plug 'wuelnerdotexe/vim-enfocado'
 
 call plug#end()
 
+if exists('+termguicolors')
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+endif
+
 colorscheme spaceduck
+
 let g:enfocado_style = 'neon' " Available: `nature` or `neon`
