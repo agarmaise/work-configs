@@ -19,6 +19,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 unalias grep
+unalias ls
 unalias rd
 
 zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
