@@ -15,7 +15,6 @@ set number                    " display line number
 set re=0
 set redrawtime=1000
 set relativenumber
-set shellcmdflag=-ic
 set shiftwidth=4
 set showcmd
 set smartcase
