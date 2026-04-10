@@ -45,9 +45,10 @@ runtime macros/matchit.vim
 call plug#begin()
 
 Plug 'junegunn/vim-easy-align'
-Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-lastpat'
+Plug 'kana/vim-textobj-user'
+Plug 'mechatroner/rainbow_csv'
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'subnut/visualstar.vim'
 Plug 'tpope/vim-abolish'
