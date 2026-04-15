@@ -46,7 +46,7 @@ _todo()
 
 complete -F _todo todo
 
-shh() { "$@" &> /dev/null; }
+shh() { eval "$@" &> /dev/null; }
 
 alias -g rdr="/Applications/Rider.app/Contents/MacOS/rider"
 alias rdh="rdr *.sln &> /dev/null &"
