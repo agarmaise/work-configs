@@ -96,7 +96,7 @@ ins() {
     print -s $next_cmd
 
     if [[ $should_execute -eq 0 ]]; then
-        eval $next_cmd
+        eval "$next_cmd"
     fi
 }
 
