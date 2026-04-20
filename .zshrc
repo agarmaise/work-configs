@@ -100,7 +100,7 @@ ins() {
     fi
 }
 
-alias yarna="TARGETS=assets yarn start:standalone"
+alias yarna="TARGETS=automation yarn start:standalone"
 alias yarnia="yarn install && yarna"
 alias cdusd="cd ~/Projects/unity-services-dashboard"
 alias cdac="cd ~/Projects/asset-cloud"
