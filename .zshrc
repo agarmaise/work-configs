@@ -20,7 +20,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 VI_MODE_SET_CURSOR=true
-MODE_INDICATOR="%{$terminfo[bold]%}%F{cyan}<<< NORMAL%f%{$reset_color%}%"
+MODE_INDICATOR="%{$terminfo[bold]%}%F{magenta}<<< NORMAL%f%{$reset_color%}%"
 INSERT_MODE_INDICATOR="%{$terminfo[bold]%}%F{green}+++ INSERT%f%{$reset_color%}%"
 
 unalias grep
