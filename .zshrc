@@ -180,6 +180,13 @@ gitcb () {
 	fi
 }
 
+gitdiffstat() {
+    local branch=$1
+    echo "full: $(git diff --shortstat $1)"
+    echo "code: $(git diff --shortstat $1 ':!*.spec.*')"
+    echo "test: $(git diff --shortstat $1 '*.spec.*')"
+}
+
 tlog () {
     tlog_output=~/logs/$1-$(date +%s%3N).log
     tee $tlog_output
