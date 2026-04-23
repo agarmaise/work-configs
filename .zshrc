@@ -182,7 +182,7 @@ gitcb () {
 
 gitdiffstat() {
     local branch=$1
-    echo "full: $(git diff --shortstat $1)"
+    echo "diff: $(git diff --shortstat $1)"
     echo "code: $(git diff --shortstat $1 ':!*.spec.*')"
     echo "test: $(git diff --shortstat $1 '*.spec.*')"
 }
