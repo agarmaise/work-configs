@@ -18,6 +18,7 @@ plugins=(
     vi-mode
 )
 source $ZSH/oh-my-zsh.sh
+
 VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 VI_MODE_SET_CURSOR=true
 MODE_INDICATOR="%{$terminfo[bold]%}%F{magenta}<<< NORMAL%f%{$reset_color%}%"
@@ -33,164 +34,12 @@ zstyle ':omz:plugins:alias-finder' exact yes # disabled by default
 zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
 
 source ~/.secrets
+source ~/.zsh_aliases
 
 export EDITOR=vim
 export MSYS=winsymlinks:nativestrict
 export DISABLE_AUTO_TITLE=true
 export LESS='-RFX'
-
-alias todo="todo.sh"
-
-_todo()
-{
-    source .todo.cfg
-    local projects=$(grep -oP '[+@]\S+' $TODO_FILE | sort -u | tr '\n' ' ')
-    local cur=${COMP_WORDS[COMP_CWORD]}
-    COMPREPLY=( $(compgen -W $projects -- $cur) )
-}
-
-complete -F _todo todo
-
-shh() { eval "$@" &> /dev/null; }
-
-alias -g rdr="/Applications/Rider.app/Contents/MacOS/rider"
-alias rdh="rdr *.sln &> /dev/null &"
-alias xrd="xargs rdr"
-alias -g wb="/Applications/WebStorm.app/Contents/MacOS/webstorm"
-alias wbh="wb . &> /dev/null &"
-alias xwb="xargs wb"
-alias kwb="ps -e | grep '/Applications/WebStorm.app/Contents/MacOS/webstorm' | head -1 | awkp 1 | xargs kill -15"
-
-alias xvim="xargs -o vim"
-
-alias cursor-ide="/usr/local/bin/cursor"
-alias cursor="agent"
-alias cursor-agent="agent"
-
-alias vz="vim ~/.zshrc"
-alias sz="source ~/.zshrc"
-
-awkp() { awk -v i=$1 '{ print (i == "NF" ? $NF : $i) }'; }
-
-xsi() { xargs sed -i "$@"; }
-
-ins() {
-    last_cmd=(${=$(fc -ln -1)})
-    n=$1
-    words=${@:2}
-    new_cmd=("${last_cmd[@]:0:$n}" "$words" "${last_cmd[@]:$n}")
-
-    read -s -k 1 "input?$new_cmd"
-
-    if [[ $input == $'\e' ]]; then
-        should_execute=1
-        next_cmd=$last_cmd
-    else
-        should_execute=0
-        next_cmd=${new_cmd[*]}
-        if [[ $input != $'\n' ]]; then
-            echo -n $input
-            next_cmd+=$input
-            read input
-            next_cmd+=$input
-        else
-            echo
-        fi
-    fi
-
-    print -s $next_cmd
-
-    if [[ $should_execute -eq 0 ]]; then
-        eval "$next_cmd"
-    fi
-}
-
-alias yarna="TARGETS=automation yarn start:standalone"
-alias yarnia="yarn install && yarna"
-alias cdusd="cd ~/Projects/unity-services-dashboard"
-alias cdac="cd ~/Projects/asset-cloud"
-
-alias jqts-raw="jq '.[] | select(.fileName == \"udash.assets\") | .messages | del(.[] | .locales | .de_DE, .fr_FR, .pt_BR, .ru_RU, .es_XN) | map(select(.locales | .ja_JP and .ko_KR and .zh_CN | not)) | del(.[] | .locales)'"
-alias jqts="curl https://cdn.cloud.unity.com/translation-status/translation-status.json | jqts-raw"
-alias jqtsl="jqts-raw translation-status.json"
-
-alias ghopen="start \`git remote -v | grep fetch | sed -r 's/.*git@(.*):(.*)\.git.*/http:\/\/\1\/\2/' | head -n1\`"
-alias chrome-dev="open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir=$HOME/tmp/chrome_dev_test --disable-web-security"
-
-focus_iterm2() {
-    osascript <<EOF
-tell application "System Events" to tell process "iTerm2"
-    set frontmost to true
-    perform action "AXRaise" of the last window
-end tell
-EOF
-}
-
-ggl() {
-    (open -gju "https://www.google.com/search?q=$(jq -r @uri <<< \"$@\")" &
-    focus_iterm2 &> /dev/null)
-}
-
-alias -g gitcg="git checkout --guess"
-alias -g gitgr="git grep --recurse-submodules"
-alias gitf="git status -s | sed s/...//"
-alias gitfr='gitf | awk '\''{ print ($3 == "") ? $1 : $3; }'\'
-gitd() { git diff $(git_main_branch) --merge-base --name-only; }
-alias clorig="git clean -fdx --exclude node_modules -- '*.orig'"
-alias cljs="git clean -fdx --exclude node_modules -- '*.js'"
-gitmi() { git for-each-ref refs/heads --exclude='**/main' --exclude='**/master' --format='%(authorname)%09%(refname:short)' | grep -i avery | awk -F\t '{ print $2 }'; }
-gitnm() { git for-each-ref refs/heads --exclude='**/main' --exclude='**/master' --format='%(authorname)%09%(refname)' | grep -iv avery | grep -oP '(?<=refs/heads/)(.*)'; }
-alias gitbv="git branch -vv"
-alias gitr="git hash-object -t tree /dev/null"
-gitum () {
-    git checkout $(git_develop_branch) && git push && git checkout $(git_main_branch) && git merge $(git_develop_branch) && git push && git checkout $(git_develop_branch)
-}
-
-alias tspec="sed -r -e 's/^([^.]*)(\.spec)?(\.\w+)$/\1\3\n\1.spec\3/' | sort | uniq | paste -sd\| - | sed -r -e 's/^|$/'\''/g'"
-alias spec="sed -r -e 's/^([^.]*)(\.spec)?(\.\w+)$/\1.spec\3/' | sort | uniq | paste -sd\| - | sed -r -e 's/^|$/'\''/g'"
-
-alias jtest="xargs yarn test --noStackTrace --"
-alias jtestcov="xargs -I{} yarn test --noStackTrace --coverage --collectCoverageFrom={} -- {}"
-alias jtesta="yarn test --noStackTrace -- app/services/assets"
-alias jtu="yarn test $WIP_FEATURE_PATH"
-
-jtestcovf () {
-    yarn test --noStackTrace --coverage --collectCoverageFrom="$1"'/**/*' -- "$1"
-}
-
-gitmm() { git checkout $(git_main_branch) && git pull && git checkout - && git merge $(git_main_branch) --no-edit; }
-gitrb() { git checkout $(git_main_branch) && git pull && git checkout - && git rebase $(git_main_branch); }
-gitrba() { git checkout $(git_main_branch) && git pull && gitmi | xargs -i sh -c 'git checkout {} && git rebase $(git_main_branch)'; }
-
-gitcb () {
-	git remote update origin --prune > /dev/null 2>&1
-    gone_branches=(${(f)"$(< <(git branch -vv | grep ': gone]' | sed s/..// | awk '{ print $1 }'))"})
-
-	if [ ${#gone_branches[@]} -gt 0 ]; then
-		echo 'Branches to be deleted:'
-		printf '%s\n' "${gone_branches[@]}"
-		read 'response?'$'\n''Remove branches? (y/n) '
-		if [[ "$response" =~ ^[yY]$ ]]; then
-			printf '%s\n' "${gone_branches[@]}" | xargs -r git branch -D
-		else
-			echo 'Goodbye'
-		fi
-	else
-		echo 'No branches deleted on remote'
-	fi
-}
-
-gitdiffstat() {
-    local branch=$1
-    echo "diff: $(git diff --shortstat $1)"
-    echo "code: $(git diff --shortstat $1 ':!*.spec.*')"
-    echo "test: $(git diff --shortstat $1 '*.spec.*')"
-}
-
-tlog () {
-    tlog_output=~/logs/$1-$(date +%s%3N).log
-    tee $tlog_output
-}
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
