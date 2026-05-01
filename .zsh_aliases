@@ -5,11 +5,11 @@ alias sz="source ~/.zshrc"
 # Applications
 alias chrome-dev="open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir=$HOME/tmp/chrome_dev_test --disable-web-security"
 
-alias -g rdr="/Applications/Rider.app/Contents/MacOS/rider"
+alias rdr="/Applications/Rider.app/Contents/MacOS/rider"
 alias rdh="rdr *.sln &> /dev/null &"
 alias xrd="xargs rdr"
 
-alias -g wb="/Applications/WebStorm.app/Contents/MacOS/webstorm"
+alias wb="/Applications/WebStorm.app/Contents/MacOS/webstorm"
 alias wbh="wb . &> /dev/null &"
 alias xwb="xargs wb"
 alias kwb="ps -e | grep '/Applications/WebStorm.app/Contents/MacOS/webstorm' | head -1 | awkp 1 | xargs kill -15"
@@ -27,8 +27,8 @@ alias yarna="TARGETS=automation yarn start:standalone"
 alias yarnia="yarn install && yarna"
 
 # Git
-alias -g gitcg="git checkout --guess"
-alias -g gitgr="git grep --recurse-submodules"
+alias gitcg="git checkout --guess"
+alias gitgr="git grep --recurse-submodules"
 alias cljs="git clean -fdx --exclude node_modules -- '*.js'"
 alias clorig="git clean -fdx --exclude node_modules -- '*.orig'"
 alias gitbv="git branch -vv"
