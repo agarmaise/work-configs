@@ -16,15 +16,22 @@ brew install \
   gnu-sed \
   grep \
   jq \
+  neovim \
+  patchutils \
   ripgrep \
+  shellcheck \
   tmux \
   tmuxinator \
   todo-txt \
   util-linux \
-  wget
+  wget \
+  yamllint \
+  yq
+
 
 brew install --cask \
   alt-tab \
+  bruno \
   docker-desktop \
   font-sauce-code-pro-nerd-font \
   iterm2 \
