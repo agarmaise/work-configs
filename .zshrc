@@ -9,7 +9,7 @@ setopt HIST_REDUCE_BLANKS
 setopt SHARE_HISTORY
 
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="ys-avery" # set by `omz`
+ZSH_THEME="ys" # set by `omz`
 plugins=(
     alias-finder
     aliases
