@@ -7,12 +7,12 @@ alias chrome-dev="open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Goo
 
 alias rdr="/Applications/Rider.app/Contents/MacOS/rider"
 alias rdh="rdr *.sln &> /dev/null &"
-alias xrd="xargs rdr"
+xrd() { xargs sh -c '/Applications/Rider.app/Contents/MacOS/rider . "$@" &>/dev/null &' _; }
 
 alias wb="/Applications/WebStorm.app/Contents/MacOS/webstorm"
 alias wbh="wb . &> /dev/null &"
-alias xwb="xargs wb"
 alias kwb="ps -e | grep '/Applications/WebStorm.app/Contents/MacOS/webstorm' | head -1 | awkp 1 | xargs kill -15"
+xwb() { xargs sh -c '/Applications/WebStorm.app/Contents/MacOS/webstorm . "$@" &>/dev/null &' _; }
 
 alias cursor-ide="/usr/local/bin/cursor"
 alias cursor="agent"
