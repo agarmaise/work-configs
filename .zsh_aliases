@@ -31,7 +31,7 @@ alias gitcg="git checkout --guess"
 alias gitgr="git grep --recurse-submodules"
 alias cljs="git clean -fdx --exclude node_modules -- '*.js'"
 alias clorig="git clean -fdx --exclude node_modules -- '*.orig'"
-alias gitbv="git branch -vv"
+alias gitbv="git branch -v"
 alias gitf="git status -s | sed s/...//"
 alias gitfr='gitf | awk '\''{ print ($3 == "") ? $1 : $3; }'\'
 alias gitr="git hash-object -t tree /dev/null"
