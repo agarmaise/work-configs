@@ -68,8 +68,7 @@ call plug#end()
 
 augroup speed_dating_format
     autocmd!
-    autocmd VimEnter * SpeedDatingFormat! %v
-    autocmd VimEnter * SpeedDatingFormat! %^v
+    autocmd VimEnter * if exists(':SpeedDatingFormat') | SpeedDatingFormat! %v | SpeedDatingFormat! %^v | endif
 augroup end
 
 if exists('+termguicolors')
