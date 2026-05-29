@@ -64,6 +64,12 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'wuelnerdotexe/vim-enfocado'
 
+if has('nvim')
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'pmizio/typescript-tools.nvim'
+endif
+
 call plug#end()
 
 augroup speed_dating_format
