@@ -14,10 +14,6 @@ alias wbh="wb . &> /dev/null &"
 alias kwb="ps -e | grep '/Applications/WebStorm.app/Contents/MacOS/webstorm' | head -1 | awkp 1 | xargs kill -15"
 xwb() { xargs sh -c '/Applications/WebStorm.app/Contents/MacOS/webstorm . "$@" &>/dev/null &' _; }
 
-alias cursor-ide="/usr/local/bin/cursor"
-alias cursor="agent"
-alias cursor-agent="agent"
-
 # Paths
 alias cdusd="cd ~/Projects/unity-services-dashboard"
 alias cdac="cd ~/Projects/asset-cloud"
