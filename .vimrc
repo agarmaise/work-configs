@@ -3,6 +3,7 @@ set nocompatible
 syntax on                     " syntax highlighting
 
 set background=dark
+set clipboard=unnamed,unnamedplus
 set cursorcolumn
 set cursorline                " current line highlight
 set expandtab
