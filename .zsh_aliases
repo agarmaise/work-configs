@@ -15,7 +15,7 @@ alias kwb="ps -e | grep '/Applications/WebStorm.app/Contents/MacOS/webstorm' | h
 xwb() { xargs sh -c '/Applications/WebStorm.app/Contents/MacOS/webstorm . "$@" &>/dev/null &' _; }
 
 # Paths
-alias cdusd="cd ~/Projects/unity-services-dashboard/root/trees"
+cdusd() { cd ~/Projects/unity-services-dashboard/root/"$@"; }
 alias cdac="cd ~/Projects/asset-cloud"
 
 # Dashboard
