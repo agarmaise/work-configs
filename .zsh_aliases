@@ -64,6 +64,15 @@ gitdiffstat() {
     echo "test: $(git diff --shortstat $1 '*.spec.*')"
 }
 
+# Dotfiles
+# Bare repo lives in ~/dotfiles; the work tree is $HOME itself.
+alias dgit='git --git-dir=$HOME/dotfiles --work-tree=$HOME'
+compdef dgit=git
+
+# Subshell where plain `git` (and every git* helper above) targets the dotfiles
+# repo. Exit to return to normal git.
+dotshell() { GIT_DIR=$HOME/dotfiles GIT_WORK_TREE=$HOME zsh; }
+
 # Jest
 alias jtest="xargs yarn test --noStackTrace --"
 alias jtestcov="xargs -I{} yarn test --noStackTrace --coverage --collectCoverageFrom={} -- {}"
